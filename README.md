@@ -235,5 +235,30 @@ If the universe postulates \(M_r = k r\) points on ring r for some fixed integer
 
 ---
 
+## Feasibility Assessment (Constant π_model Criterion)
+
+**Criterion:** a model is viable as a “constant-π universe” only if
+\\[
+ \\pi_{model} = \\frac{\\text{circumference}}{\\text{diameter}}
+\\]
+is a **constant**, independent of radius and center.
+
+### Viable (constant π_model)
+- **Model A (Z^2, L1):** \\(\\pi_{L1} = 2\\) for all r.
+- **Model B (Z^2, L∞):** \\(\\pi_{L\\infty} = 4\\) for all r.
+- **Model C (Hex grid, 6-neighbor):** \\(\\pi_{hex} = 3\\) for all r.
+- **Model H (Radial-only rings):** \\(\\pi_{radial} = k/2\\) if k is fixed.
+
+### Conditionally Viable (constant only within a bubble)
+- **Model G (Multi-bubble):** each bubble can have its own constant π_model,
+  but there is no single global constant.
+
+### Not Viable as Constant-π Universes
+- **Model D (Cycle graph):** \\(\\pi = 1/r\\) depends on r.
+- **Model E (Z^3, L1 shell):** \\(\\pi\\) grows with r.
+- **Model F (2D torus):** scale-dependent due to periodicity.
+
+---
+
 ## Next Step
-If you want a specific **“bubble”** model to be treated as the target universe, tell me which model and parameter set (e.g., Model H with k=6), and I will compute the exact π for that universe and tie it to a quantization condition like \(2\pi R = N\lambda\).
+If you want a specific model to be treated as the target universe, I can tie its constant to a quantization condition like \\(2\\pi R = N\\lambda\\) and derive discrete radius spectra.
