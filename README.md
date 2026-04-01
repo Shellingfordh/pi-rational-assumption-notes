@@ -304,64 +304,26 @@ So radii are quantized in units of \\(\\lambda/6\\), consistent with an integer-
 
 ---
 
-## Plausibility Scoring (Quantitative Heuristic)
+## Final Conclusion (Within the Chosen Assumptions)
 
-To compare constant-π models, define a simple score:
+Under the fixed assumptions:
+- (1) Circle definition and (2) circumference/diameter measurement match ours.
+- (4) π is defined as circumference/diameter.
+- Only (3) the **space structure** is changed.
 
-\\[
- S = w_I I + w_H H + w_L L + w_C C
-\\]
+the analysis supports a **constant rational π** only in **discrete lattice universes**.
+Among them, the **hex/triangular lattice (Model C)** is the most plausible because it
+minimizes directional bias while preserving homogeneity, locality, and a constant π.
 
-Where each subscore is in [0,1]:
-- **I (Isotropy):** 1 is fully isotropic, 0 is highly axis-biased.
-- **H (Homogeneity):** 1 if all locations equivalent.
-- **L (Locality):** 1 if geometry from nearest-neighbor structure.
-- **C (Constant π):** 1 if π is constant.
+**Final Result:**  
+\[
+ \pi_{best} = 3
+\]
 
-Weights (fixed for this document):  
-\\(w_I=0.4, w_H=0.2, w_L=0.2, w_C=0.2\\).
+**Quantization law in the best model:**  
+\[
+ 2\pi_{best} R = N\lambda \quad\Rightarrow\quad R = \frac{N\lambda}{6}
+\]
 
-### Subscores by Model (constant-π candidates)
-
-| Model | I | H | L | C | Score S |
-|------:|---:|---:|---:|---:|--------:|
-| A (L1 square) | 0.3 | 1.0 | 1.0 | 1.0 | 0.72 |
-| B (L∞ square) | 0.2 | 1.0 | 1.0 | 1.0 | 0.68 |
-| C (Hex) | 0.8 | 1.0 | 1.0 | 1.0 | 0.92 |
-| H (Radial rings) | 0.1 | 0.8 | 0.6 | 1.0 | 0.52 |
-
-**Winner:** Model C (hex) remains best under this heuristic.
-
----
-
-## Observable Consequences (Model C vs. Model A/B)
-
-If the universe is Model C (hex/triangular lattice):
-- **Directional isotropy:** physical laws should show 6-fold symmetry.
-- **Wave propagation:** dispersion relations reflect the lattice; anisotropy small but periodic.
-- **Quantized radii:** orbits/standing waves allow only \\(R = N\\lambda/6\\).
-
-If the universe is Model A or B (square lattices):
-- **Strong axis effects:** preferred directions (0°, 90°) dominate.
-- **“Circular” wavefronts** are diamond or square shaped.
-- **π values** 2 or 4, but with visibly stronger anisotropy.
-
----
-
-## Model C: Explicit Lattice Geometry Check
-
-For hex axial coordinates (u,v), define the 6 neighbor steps:
-\\[
- (1,0), (0,1), (-1,1), (-1,0), (0,-1), (1,-1)
-\\]
-The distance formula
-\\[
- d_6((u,v),(0,0)) = \\frac{|u| + |v| + |u+v|}{2}
-\\]
-counts the minimum number of steps.  
-The “circle” \\(d_6 = r\\) is a hexagon with side length r, so:
-\\[
- |C_r| = 6r \\quad\\Rightarrow\\quad \\pi_{hex}=3
-\\]
-
-This confirms the constant rational π within the most plausible discrete model.
+This completes the model selection and establishes a coherent, rational-π universe
+consistent with the closure condition.
