@@ -261,4 +261,43 @@ is a **constant**, independent of radius and center.
 ---
 
 ## Next Step
-If you want a specific model to be treated as the target universe, I can tie its constant to a quantization condition like \\(2\\pi R = N\\lambda\\) and derive discrete radius spectra.
+## Most Plausible Model (Given Our Constraints)
+
+**Goal:** choose the *most plausible* universe model that yields a **constant rational π** while keeping items (1), (2), (4) the same as ours.
+
+**Plausibility criteria (internal):**
+- **Isotropy:** minimal directional bias.
+- **Homogeneity:** all locations equivalent.
+- **Locality:** geometry from nearest-neighbor structure.
+- **Constant π:** independent of radius.
+
+**Evaluation:**
+- **Model A (L1 square lattice)** is homogeneous/local but strongly anisotropic (diamond “circles”).
+- **Model B (L∞ square lattice)** is homogeneous/local but even more anisotropic (square “circles”).
+- **Model C (hex/triangular lattice)** is homogeneous/local and **more isotropic** than square lattices.
+- **Model H (radial-only rings)** is highly artificial and non-isotropic.
+
+**Most plausible under these rules:**  
+**Model C (hex/triangular lattice)** with **π_model = 3**.
+
+Reason: it is the most symmetric discrete lattice in 2D with constant π, minimizing directional bias while preserving discreteness and a rational π.
+
+---
+
+## Quantization Condition in the Most Plausible Model
+
+Assume the closure condition:
+\\[
+ 2\\pi_{hex} R = N \\lambda
+\\]
+With \\(\\pi_{hex} = 3\\), this becomes:
+\\[
+ 2(3)R = N\\lambda \\quad\\Rightarrow\\quad 6R = N\\lambda
+\\]
+
+**Discrete radius spectrum:**
+\\[
+ R = \\frac{N\\lambda}{6}
+\\]
+
+So radii are quantized in units of \\(\\lambda/6\\), consistent with an integer-locked closure condition in this model.
