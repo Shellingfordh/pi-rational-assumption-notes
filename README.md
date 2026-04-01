@@ -381,3 +381,64 @@ and allows \(\pi_{model}\) to converge to the Euclidean constant under refinemen
 If you require **strictly discrete space** (not just discrete measurement), the best
 adjustment is **E1 with a lattice spacing parameter h** and the limit \(h \to 0\),
 which yields arbitrarily close approximation to Euclidean π.
+
+---
+
+## Selection: Best-Fit Model Under Your Premise
+
+**Premise:** “Everything is like our universe,” so **Euclidean distance is retained**.
+The only admissible changes are **measurement/representation rules** that can converge
+to the Euclidean constant as resolution increases.
+
+**Chosen model:** **E1 (Euclidean + lattice sampling)**.
+
+**Why E1 wins:**
+- It keeps Euclidean geometry intact.
+- It explains why a discrete counting procedure yields a rational **approximation**
+  that converges to the same constant as resolution improves.
+- It avoids altering the true geometry; only the measurement rule is coarse.
+
+---
+
+## Convergence and Error Scaling (E1)
+
+Let grid spacing be \(h\). Define the pixelated circle as the set of grid points whose
+distance from the center is in \([r-\tfrac{h}{2}, r+\tfrac{h}{2}]\). Let \(C_h\) be the
+boundary length obtained by counting boundary edges.
+
+**Heuristic scaling:**
+\[
+ \pi_{E1}(h) = \frac{C_h}{2r} = \pi_{Euclid} + O\!\left(\frac{h}{r}\right)
+\]
+- Fixing \(r\), smaller \(h\) improves accuracy.
+- Fixing \(h\), larger \(r\) improves accuracy.
+
+This matches the intuition that **higher resolution or larger circles** yield more
+accurate π estimates while preserving Euclidean geometry.
+
+---
+
+## Linking to the Quantization Condition
+
+Assume the closure rule uses an **effective measured circumference**:
+\[
+ 2\pi_{E1}(h)\,R = N\lambda
+\]
+- With finite \(h\), \(\pi_{E1}(h)\) is a rational approximation (finite counting).
+- As \(h\to 0\) or \(R \to \infty\), \(\pi_{E1}(h) \to \pi_{Euclid}\), matching our universe.
+
+**Interpretation:** you can keep Euclidean geometry **and** get rational intermediate
+values from discrete measurement, while the model converges to the observed irrational
+constant in the refinement limit.
+
+---
+
+## Final Model Statement (Current Best)
+
+**Best model under your premise:**  
+Euclidean geometry with **discrete measurement resolution** (E1), where π is obtained
+by lattice-sampling the circle boundary. This yields **rational finite-resolution
+estimates** that **converge** to the Euclidean π.
+
+This is the closest match to “same as our universe” while still allowing discrete,
+integer-locked counting procedures.
