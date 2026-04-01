@@ -304,26 +304,80 @@ So radii are quantized in units of \\(\\lambda/6\\), consistent with an integer-
 
 ---
 
-## Final Conclusion (Within the Chosen Assumptions)
+## Euclidean-Consistent Models (π Approaches the Euclidean Constant)
 
-Under the fixed assumptions:
-- (1) Circle definition and (2) circumference/diameter measurement match ours.
-- (4) π is defined as circumference/diameter.
-- Only (3) the **space structure** is changed.
+You now require: **space structure is the same as our universe (Euclidean)**, and
+the best model is the one whose computed π can **converge to the Euclidean constant**
+as resolution improves.
 
-the analysis supports a **constant rational π** only in **discrete lattice universes**.
-Among them, the **hex/triangular lattice (Model C)** is the most plausible because it
-minimizes directional bias while preserving homogeneity, locality, and a constant π.
+Below are models that preserve Euclidean distance but introduce **discretization or
+measurement rules** whose π_model **approaches** the Euclidean value in the limit.
 
-**Final Result:**  
+### Model E1 — Euclidean Space with Lattice Sampling (Pixel Circle)
+
+**Space:** continuous Euclidean plane  
+**Distance:** Euclidean  
+**Circle:** set of grid points whose Euclidean distance to center is in \([r-\tfrac{h}{2}, r+\tfrac{h}{2}]\)  
+**Circumference estimate:** boundary length of the pixelated ring (sum of edge lengths)  
+**Diameter:** \(2r\)
+
+**Convergence claim:** as grid spacing \(h \to 0\), the polygonal boundary of the
+pixelated circle converges to the true Euclidean circle, so
 \[
- \pi_{best} = 3
+ \pi_{E1}(h) \to \pi_{Euclid}.
 \]
 
-**Quantization law in the best model:**  
-\[
- 2\pi_{best} R = N\lambda \quad\Rightarrow\quad R = \frac{N\lambda}{6}
-\]
+**Interpretation:** the geometry is Euclidean; only the measurement is discretized.
+Thus π_model can be made arbitrarily close to the Euclidean constant.
 
-This completes the model selection and establishes a coherent, rational-π universe
-consistent with the closure condition.
+---
+
+### Model E2 — Euclidean Space with Regular Polygon Approximation
+
+**Space:** continuous Euclidean plane  
+**Circle:** replaced by an inscribed and circumscribed regular \(n\)-gon  
+**Circumference estimate:** polygon perimeter  
+**Diameter:** \(2r\)
+
+**Computation:**  
+\[
+ \pi_{in}(n) = n \sin\!\left(\tfrac{\pi}{n}\right),\quad
+ \pi_{out}(n) = n \tan\!\left(\tfrac{\pi}{n}\right)
+\]
+where radius cancels in the ratio.
+
+**Convergence:**  
+\[
+ \pi_{in}(n) \uparrow \pi_{Euclid},\quad \pi_{out}(n) \downarrow \pi_{Euclid}
+\]
+as \(n \to \infty\).
+
+---
+
+### Model E3 — Euclidean Space with Band-Count Circumference (Gauss Ring)
+
+**Space:** continuous Euclidean plane  
+**Circle:** band \(r-\tfrac{h}{2} \le \sqrt{x^2+y^2} \le r+\tfrac{h}{2}\)  
+**Circumference estimate:** number of lattice points inside the band times \(h\)  
+**Diameter:** \(2r\)
+
+**Heuristic:** band area is approximately \(2\pi r h\).  
+Thus the count of lattice points times \(h\) approximates circumference:
+\[
+ C_h \approx 2\pi r,\quad \pi_{E3}(h) = \frac{C_h}{2r} \to \pi_{Euclid}
+\]
+as \(h \to 0\).
+
+---
+
+## Model Ranking Under the New Criterion
+
+**Criterion:** the most likely model is the one that preserves Euclidean geometry
+and allows \(\pi_{model}\) to converge to the Euclidean constant under refinement.
+
+**Result:** **E1–E3 are all viable**, with **E1** the most direct
+(pure Euclidean geometry + measurement discretization).
+
+If you require **strictly discrete space** (not just discrete measurement), the best
+adjustment is **E1 with a lattice spacing parameter h** and the limit \(h \to 0\),
+which yields arbitrarily close approximation to Euclidean π.
