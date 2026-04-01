@@ -804,3 +804,25 @@ interpret the discretization parameter \(h\) as a **measurement resolution** (po
 bounded below by \(\ell_P\)), not as a dynamical lattice that breaks Lorentz symmetry.
 
 This validates U\* as the **best-fit universe model** under your convergence rule.
+
+---
+
+## Final Conclusion (Model Determination)
+
+Given your rule set:
+1. **π must be rational at finite resolution** but **converge to Euclidean π** in the limit.
+2. **All models are constrained** by fundamental constants \(c, \hbar, k_B, G\) and
+   core axioms (local Lorentz invariance, equivalence principle, second law).
+
+The only model class that satisfies all constraints is:
+
+**U\*** = **Euclidean geometry + finite-resolution measurement**, with a lower bound
+on resolution at the Planck length. This model:
+- Produces **rational** π estimates at any finite resolution.
+- Converges to the **Euclidean irrational π** as resolution improves.
+- Preserves **c** and Lorentz invariance (sampling does not change dynamics).
+- Is compatible with **quantum discreteness** (\(\hbar\)) and thermodynamic time (\(k_B\)).
+- Respects **GR locality** and does not contradict the equivalence principle.
+
+**Therefore:** under your convergence criterion and fundamental-constant validation,
+**U\*** is the final and most likely universe model.
