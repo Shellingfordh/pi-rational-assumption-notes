@@ -442,3 +442,59 @@ estimates** that **converge** to the Euclidean π.
 
 This is the closest match to “same as our universe” while still allowing discrete,
 integer-locked counting procedures.
+
+---
+
+## Explicit Approximation Pipeline (E1)
+
+To make E1 operational, define a deterministic pipeline that yields **rational**
+approximations from integer counts:
+
+1. **Grid spacing:** choose \(h = 1/m\) for integer \(m\).
+2. **Radius selection:** choose \(r = k h\) for integer \(k\).
+3. **Pixelated ring:** select grid points \((i h, j h)\) such that
+   \[
+   r-\tfrac{h}{2} \le \sqrt{(ih)^2+(jh)^2} \le r+\tfrac{h}{2}.
+   \]
+4. **Boundary length:** count boundary edges \(E_h\) of the pixelated ring and set
+   \[
+   C_h = E_h \cdot h.
+   \]
+5. **π estimate:**  
+   \[
+   \pi_{E1}(h) = \frac{C_h}{2r}.
+   \]
+
+All quantities are rational because they are derived from integer counts and
+integer multiples of \(h\). As \(m \to \infty\) and \(k \to \infty\) with fixed
+physical radius, the estimate converges to the Euclidean constant.
+
+---
+
+## Error Behavior (Heuristic Bound)
+
+Let \(r\) be fixed and \(h\) be the grid spacing.
+The pixelated boundary lies in a tubular neighborhood of thickness \(O(h)\) around
+the true circle. Standard geometric arguments (perimeter of Minkowski sum) give:
+\[
+ \left| \pi_{E1}(h) - \pi_{Euclid} \right| \le c \frac{h}{r}
+\]
+for some constant \(c\) independent of \(r\) and \(h\).
+
+**Implication:** doubling resolution (halving \(h\)) roughly halves the error.
+
+---
+
+## Compatibility With Integer Closure
+
+Using the closure condition with finite resolution:
+\[
+ 2\pi_{E1}(h)\,R = N\lambda
+\]
+- Since \(\pi_{E1}(h)\) is rational, the condition can be satisfied exactly for
+  integer \(N\) by appropriate discrete \(R\) values.
+- As resolution improves, the spectrum of allowed \(R\) converges to the Euclidean
+  spectrum determined by \(\pi_{Euclid}\).
+
+This provides a **consistent bridge**: discrete integer closure at finite resolution,
+continuous Euclidean behavior in the limit.
