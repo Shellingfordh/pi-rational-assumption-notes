@@ -498,3 +498,53 @@ Using the closure condition with finite resolution:
 
 This provides a **consistent bridge**: discrete integer closure at finite resolution,
 continuous Euclidean behavior in the limit.
+
+---
+
+## Cross-Check: Polygon Approximation vs. Pixel Sampling
+
+To ensure E1 is not an artifact of the pixel rule, compare with E2 (regular polygons).
+Both are Euclidean and should converge to the same constant.
+
+**E2 Recap:**
+\[
+ \pi_{in}(n) = n \sin\left(\tfrac{\pi}{n}\right),\quad
+ \pi_{out}(n) = n \tan\left(\tfrac{\pi}{n}\right)
+\]
+
+**Asymptotics (small angle):** for large n,
+\[
+ \sin(\tfrac{\pi}{n}) = \tfrac{\pi}{n} - O(n^{-3}),\quad
+ \tan(\tfrac{\pi}{n}) = \tfrac{\pi}{n} + O(n^{-3})
+\]
+So
+\[
+ \pi_{in}(n) = \pi - O(n^{-2}),\quad \pi_{out}(n) = \pi + O(n^{-2}).
+\]
+
+**Consistency statement:** both polygon bounds and pixel sampling converge to the
+same Euclidean constant, strengthening the E1 model’s legitimacy.
+
+---
+
+## Selection Tightening: Why E1 Beats E2/E3
+
+All E1–E3 converge to Euclidean π, but E1 is best under your premise because:
+- E1 is **directly tied to integer counting**, matching your closure condition.
+- E2 requires idealized polygons (less “physics-like” for discrete measurement).
+- E3 relies on band-area heuristics (indirect).
+
+Hence the **best-fit model remains E1**: Euclidean geometry + discrete measurement.
+
+---
+
+## Final Model (Operational Form)
+
+**Universe geometry:** Euclidean.  
+**Measurement rule:** pixelated ring counting at resolution \(h\).  
+**π estimate:** \(\pi_{E1}(h) = C_h/(2r)\) (rational).  
+**Limit:** \(\pi_{E1}(h) \to \pi_{Euclid}\) as \(h \to 0\).  
+**Closure condition:** \(2\pi_{E1}(h) R = N\lambda\).
+
+This is the **closest model** to “same as our universe” while preserving your
+integer-locked closure logic and allowing arbitrarily accurate approximations.
