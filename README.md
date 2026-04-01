@@ -595,3 +595,31 @@ model is:
 This model is the **closest possible** to our universe while still allowing
 integer-locked closure conditions and rational intermediate approximations of π.
 It converges to the observed irrational constant in the refinement limit.
+
+---
+
+## Integration With the Complex-Time (Speed–Temperature–Time) Framework
+
+The complex-time framework treats time as a complex quantity whose **imaginary part**
+is tied to temperature via the Euclidean-time period \(\beta\). This change is
+temporal, not spatial, so it does **not** alter the Euclidean metric used to define
+circles. Therefore it is fully compatible with the Euclidean measurement model for π.
+
+### Compatibility Statement
+- **Geometry:** remains Euclidean, so the circumference/diameter ratio is still the
+  Euclidean constant in the continuum.
+- **Measurement:** discretized sampling yields rational \(\pi_{E1}(h)\) values that
+  converge to \(\pi_{Euclid}\) as resolution improves.
+- **Complex time:** modifies temporal structure (via \(\beta\)) but does **not**
+  change the spatial metric used to define circles.
+
+### Unified Interpretation
+- **Spatial side:** \(\pi\) remains the Euclidean constant; rational values arise
+  only from finite-resolution measurement.
+- **Temporal side:** temperature modifies imaginary-time period without changing
+  spatial geometry.
+
+Thus the complex-time model **reinforces** the conclusion of this repo: the only
+consistent way to obtain rational “\(\pi\)” values in our geometry is through
+discrete measurement or finite-resolution procedures, not by changing the constant
+itself.
