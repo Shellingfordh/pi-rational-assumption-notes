@@ -1,82 +1,239 @@
-# π is Rational? A Contradiction-Driven Writeup
+# Alternate-Universes: π From Different Space Structures
 
-This repo documents a staged attempt to **assume** π is rational and derive consequences. The end result is a contradiction, which shows the assumption cannot hold. I will update this file in stages, as requested.
+This repo treats **π as a model-dependent ratio**. We keep items (1), (2), and (4) the same as in our universe, and vary **only item (3)**: the space structure. In each model, “π” is defined as
 
-## Stage 0 — Setup: Assume π is rational
-We start by **assuming**:
-- π = a/b for integers a, b > 0 in lowest terms.
+- **π_model = (circle circumference) / (circle diameter)**
 
-Goal: see whether this assumption is consistent with known analysis. We do **not** assume any specific physics postulate; we treat the math directly.
+The rest of this file gives **multiple universe models**, each with explicit definitions and **detailed calculations**.
 
-## Stage 1 — Construct a contradiction (Niven-style, detailed)
-Define, for integer n > 0:
+---
 
-- f(x) = x^n (π - x)^n / n!
+## Model A — Square Lattice, Taxicab Metric (L1)
 
-Properties:
-1) f(x) >= 0 on [0, π], and f(0) = f(π) = 0.
-2) Let F(x) be the alternating sum of even derivatives:
-   F(x) = f(x) - f''(x) + f''''(x) - ... + (-1)^n f^{(2n)}(x).
+**Space:** integer grid \(\mathbb{Z}^2\)
 
-Claim A (integration-by-parts identity):
+**Distance:**
+\[
+ d_1((x,y),(0,0)) = |x| + |y|
+\]
 
-- I = \int_0^π f(x) sin(x) dx = F(0) + F(π)
+**Circle of radius r:**
+\[
+ C_r = \{(x,y) \in \mathbb{Z}^2 : |x| + |y| = r\}
+\]
 
-Sketch of proof:
-- Use that (sin x)'' = -sin x.
-- Integrate by parts twice to move derivatives from sin(x) onto f(x).
-- Boundary terms at 0 and π collect into F(0)+F(π).
-- Repeating 2n times yields the alternating-sum expression.
+**Circumference:** number of lattice points on \(C_r\): \(|C_r|\)
 
-Claim B (strict bounds):
+**Diameter:** \(2r\)
 
-- 0 < I < 1 for sufficiently large n.
+**Calculation of |C_r|:**
+- In the first quadrant, solutions to \(x + y = r\) with \(x,y \ge 0\) are \(r+1\) points.
+- Across 4 quadrants, corner points are shared, so total is \(4r\).
 
-Reasoning:
-- I > 0 because f(x) >= 0 and sin x > 0 on (0, π).
-- For large n, f(x) is sharply peaked and extremely small on most of [0, π].
-  A crude bound is:
-  0 < I <= \int_0^π f(x) dx <= π * max_{x in [0,π]} f(x).
-  The maximum of f(x) occurs at x=π/2, giving
-  max f(x) = (π/2)^{2n} / n!.
-  Since n! grows faster than any exponential, (π/2)^{2n} / n! -> 0,
-  hence I < 1 for large enough n.
+**Result:**
+\[
+ |C_r| = 4r \quad \Rightarrow \quad \pi_{L1} = \frac{|C_r|}{2r} = \frac{4r}{2r} = 2
+\]
 
-Claim C (integrality under the rationality assumption):
+**Conclusion:** \(\pi_{L1} = 2\) (rational).
 
-- If π = a/b and n is a multiple of b, then F(0) + F(π) is an integer.
+---
 
-Reasoning:
-- Expand f(x) as a polynomial in x with coefficients that are rational in π.
-- Each even derivative f^{(2k)}(x) evaluated at x=0 or x=π yields a rational number
-  whose denominator divides n! and whose π-powers are at most π^n.
-- Choosing n multiple of b clears denominators, making each term integer.
-- Thus F(0) + F(π) is integer.
+## Model B — Square Lattice, Chebyshev Metric (L∞)
 
-Contradiction:
-- By Claim A, I = F(0) + F(π).
-- By Claim B, 0 < I < 1.
-- By Claim C, I is an integer.
-- No integer lies strictly between 0 and 1. Contradiction.
+**Space:** integer grid \(\mathbb{Z}^2\)
 
-Therefore π cannot be rational.
+**Distance:**
+\[
+ d_\infty((x,y),(0,0)) = \max(|x|,|y|)
+\]
 
-## Stage 2 — Connection to 2πR = Nλ (Quantum condition)
-The condition
+**Circle of radius r:**
+\[
+ C_r = \{(x,y) : \max(|x|,|y|)=r\}
+\]
 
-- 2πR = Nλ
+**Circumference:** number of lattice points on \(C_r\)
 
-quantizes **R** (or momentum via λ = h/p), not π. If π were rational, this identity would still only constrain **R** for each allowed λ. It does not force π to be rational. The assumption “integer N implies π is rational” is a category error.
+**Diameter:** \(2r\)
 
-## Stage 3 — Can π be “calculated exactly”?
-Short answer: **no**.
+**Calculation of |C_r|:**
+- All points in the square \([-r,r]^2\) minus interior \([-(r-1),(r-1)]^2\).
+\[
+ |C_r| = (2r+1)^2 - (2r-1)^2 = 8r
+\]
 
-- π is irrational, so it cannot be written as a finite decimal or a ratio of integers.
-- We can compute **approximations** of π to arbitrarily many digits, but there is no
-  finite exact “calculation” in rational form.
+**Result:**
+\[
+ \pi_{L\infty} = \frac{8r}{2r} = 4
+\]
 
-If you want, I can add a separate file with concrete approximation methods
-(e.g., arctangent series, continued fractions) and error bounds.
+**Conclusion:** \(\pi_{L\infty} = 4\) (rational).
 
-## Status
-Current conclusion: the assumption “π is rational” leads to a contradiction. Therefore π is irrational.
+---
+
+## Model C — Hex/Triangular Lattice, 6-Neighbor Metric
+
+**Space:** hexagonal lattice (triangular grid); represent points with axial coordinates \((u,v)\)
+
+**Distance:**
+\[
+ d_6((u,v),(0,0)) = \frac{|u| + |v| + |u+v|}{2}
+\]
+
+**Circle of radius r:** points at distance r by \(d_6\)
+
+**Circumference:** number of lattice points on \(C_r\)
+
+**Diameter:** \(2r\)
+
+**Calculation of |C_r|:**
+- There are 6 directions; each side contributes r points.
+\[
+ |C_r| = 6r
+\]
+
+**Result:**
+\[
+ \pi_{hex} = \frac{6r}{2r} = 3
+\]
+
+**Conclusion:** \(\pi_{hex} = 3\) (rational).
+
+---
+
+## Model D — Graph-Cycle Universe (Discrete Ring Graph)
+
+**Space:** cycle graph \(C_M\) with M nodes placed on a ring
+
+**Distance:** graph shortest-path distance
+
+**Circle of radius r:** set of nodes at distance r from a fixed center
+
+**Circumference:** number of nodes at distance r
+
+**Diameter:** \(2r\)
+
+**Calculation:**
+- For 0 < r < M/2, there are exactly 2 nodes at distance r.
+\[
+ |C_r| = 2
+\]
+
+**Result:**
+\[
+ \pi_{cycle}(r) = \frac{|C_r|}{2r} = \frac{2}{2r} = \frac{1}{r}
+\]
+
+**Conclusion:** “π” is **not constant**; it depends on r. It is rational for any integer r.
+
+---
+
+## Model E — Discrete Sphere in 3D Lattice (L1 Metric)
+
+**Space:** integer grid \(\mathbb{Z}^3\)
+
+**Distance:**
+\[
+ d_1((x,y,z),(0,0,0)) = |x|+|y|+|z|
+\]
+
+**Sphere of radius r:** points with \(|x|+|y|+|z| = r\)
+
+**Circumference analogue:** size of the 2D shell
+
+**Diameter:** \(2r\)
+
+**Calculation of shell size:**
+Number of nonnegative solutions to \(x+y+z=r\) is \(\binom{r+2}{2}\). Accounting for signs:
+\[
+ |S_r| = 6\binom{r+2}{2} - 12\binom{r+1}{1} + 8
+\]
+Simplify:
+\[
+ |S_r| = 3r^2 + 3r + 2
+\]
+
+**Result:**
+\[
+ \pi_{3D,L1}(r) = \frac{|S_r|}{2r} = \frac{3r^2+3r+2}{2r} = \frac{3}{2}r + \frac{3}{2} + \frac{1}{r}
+\]
+
+**Conclusion:** “π” depends on r, and is always rational for integer r.
+
+---
+
+## Model F — Periodic Continuous Space (2D Torus)
+
+**Space:** \([0,L)\times[0,L)\) with opposite edges identified
+
+**Distance:** shortest geodesic distance on the torus
+
+**Circle of radius r:** locus of points at geodesic distance r
+
+**Circumference:** geodesic circle length
+
+**Diameter:** \(2r\)
+
+**Behavior:**
+- For small r \(\ll L/2\), the circle is locally Euclidean:
+\[
+ C(r) \approx 2\pi r, \quad \pi_{torus} \approx \pi
+\]
+- For large r (near \(L/2\)), circles self-overlap and length is no longer \(2\pi r\).
+
+**Conclusion:** “π” is **scale-dependent** and not a single constant.
+
+---
+
+## Model G — Bubble Universe (Multiple Components)
+
+**Space:** disjoint union of regions, each with its own metric (choose any above)
+
+**Circle definition:** purely local to each bubble
+
+**Conclusion:**
+- Each bubble has its own \(\pi_{model}\): can be 2, 3, 4, or scale-dependent.
+- Rational “π” bubbles are possible when the local metric is discrete.
+
+---
+
+## Model H — Discrete Circular Lattice (Radial-Only Universe)
+
+**Space:** concentric discrete rings at radii r=1,2,3,... with M_r points on ring r
+
+**Distance:** radial steps; angular motion costs 0 for circumference counting
+
+**Circle of radius r:** the ring with M_r points
+
+**Circumference:** \(M_r\)
+
+**Diameter:** \(2r\)
+
+**Calculation:**
+If the universe postulates \(M_r = k r\) points on ring r for some fixed integer k,
+\[
+ \pi_{radial} = \frac{M_r}{2r} = \frac{k r}{2r} = \frac{k}{2}
+\]
+
+**Conclusion:** “π” is rational and tunable by k.
+
+---
+
+## Summary Table
+
+| Model | Space / Metric | π_model |
+|------:|----------------|---------|
+| A | Z^2, L1 | 2 |
+| B | Z^2, L∞ | 4 |
+| C | Hex grid, 6-neighbor | 3 |
+| D | Cycle graph | 1/r (not constant) |
+| E | Z^3, L1 shell | (3/2)r + 3/2 + 1/r |
+| F | 2D torus | scale-dependent |
+| G | Multi-bubble | depends on bubble |
+| H | Radial-only rings | k/2 |
+
+---
+
+## Next Step
+If you want a specific **“bubble”** model to be treated as the target universe, tell me which model and parameter set (e.g., Model H with k=6), and I will compute the exact π for that universe and tie it to a quantization condition like \(2\pi R = N\lambda\).
