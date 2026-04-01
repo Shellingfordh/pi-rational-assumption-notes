@@ -437,6 +437,33 @@ which is exactly the E1–E3 class.
 
 ---
 
+## Final Universe Model (Under the Convergence Rule)
+
+**Rule:** only models whose \(\pi\) converges to the Euclidean irrational constant
+are admissible as “most likely.”  
+**Result:** every admissible model reduces to **Euclidean geometry with finite
+measurement resolution**.
+
+### Canonical Model (Most Likely)
+**U\***: *Euclidean space + discrete measurement resolution (E1)*  
+1. **Geometry:** Euclidean metric in space (unchanged).  
+2. **Time structure:** may include complex-time thermodynamic periodicity without
+   altering spatial geometry.  
+3. **Measurement rule:** circumference measured via finite-resolution sampling.  
+4. **π-estimate:** \(\pi_{E1}(h)=C_h/(2r)\) with rational output.  
+5. **Limit:** \(\pi_{E1}(h)\to\pi_{Euclid}\) as \(h\to 0\).
+
+### Why This Is the “True” Model Under Your Rule
+- It is the **only** model class that satisfies the convergence requirement.
+- All other models must be **adjusted** to become Euclidean in the limit, which
+  is exactly U\*.
+
+**Therefore:** the “true” universe model, **as defined by your convergence rule**, is
+Euclidean geometry with finite-resolution measurement (E1), optionally paired with the
+complex-time thermodynamic structure.
+
+---
+
 ## Selection: Best-Fit Model Under Your Premise
 
 **Premise:** “Everything is like our universe,” so **Euclidean distance is retained**.
