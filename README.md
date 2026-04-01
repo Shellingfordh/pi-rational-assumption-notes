@@ -384,6 +384,59 @@ which yields arbitrarily close approximation to Euclidean π.
 
 ---
 
+## Convergence Criterion for “Most Likely” Models
+
+**Rule you specified:** a model is most likely correct **only if its π can converge
+to the Euclidean irrational constant** under refinement. We apply this to all models:
+
+### Models That **Do** Converge to Euclidean π
+- **E1 (Euclidean + lattice sampling):** \(\pi_{E1}(h) \to \pi_{Euclid}\) as \(h\to 0\).
+- **E2 (Regular polygons):** \(\pi_{in}(n)\uparrow \pi\), \(\pi_{out}(n)\downarrow \pi\).
+- **E3 (Gauss ring count):** \(\pi_{E3}(h) \to \pi\) as \(h\to 0\).
+
+### Models That **Do Not** Converge (Fixed Rational π)
+- **A (L1 square):** \(\pi=2\) for all r (no convergence).
+- **B (L∞ square):** \(\pi=4\) for all r (no convergence).
+- **C (Hex grid):** \(\pi=3\) for all r (no convergence).
+- **D (Cycle graph):** \(\pi=1/r\) depends on r, but does not converge to Euclidean π.
+- **E (Z^3 L1 shell):** \(\pi(r)\) grows with r, not Euclidean.
+- **F (2D torus):** scale-dependent, not Euclidean.
+- **G (Multi-bubble):** bubble-dependent, not a single Euclidean limit.
+- **H (Radial rings):** \(\pi=k/2\) fixed by construction.
+
+**Conclusion:** under your rule, only **E1–E3** qualify as “most likely.”
+
+---
+
+## Adjusted Models to Enforce Euclidean Convergence
+
+For each non-convergent model, here is the **minimal adjustment** needed to make
+its π converge to the Euclidean constant:
+
+1. **A/B/C (Discrete lattices):** embed the lattice in Euclidean space and define
+   π using **metric circumference** rather than lattice step count. Then as the
+   lattice spacing \(h\to 0\), the lattice-sampled circumference converges to
+   the Euclidean circle length.
+
+2. **D (Cycle graph):** replace the cycle with a **ring embedded in Euclidean space**
+   and define distance by arc length. Then π is Euclidean by construction.
+
+3. **E (Z^3 L1 shell):** define the sphere by Euclidean radius instead of L1 radius;
+   use Euclidean surface measure to recover the standard π-limit.
+
+4. **F (2D torus):** restrict to **local radii** \(r \ll L/2\) and apply E1/E2
+   measurement; the local geometry converges to Euclidean.
+
+5. **G (Multi-bubble):** select bubbles with Euclidean geometry and apply E1/E2.
+
+6. **H (Radial rings):** enforce ring point counts via Euclidean circumference
+   \(M_r \approx 2\pi r/h\); then \(\pi\) converges under refinement.
+
+These adjustments all reduce to **Euclidean measurement with finite resolution**,
+which is exactly the E1–E3 class.
+
+---
+
 ## Selection: Best-Fit Model Under Your Premise
 
 **Premise:** “Everything is like our universe,” so **Euclidean distance is retained**.
