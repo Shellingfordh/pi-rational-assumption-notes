@@ -548,3 +548,50 @@ Hence the **best-fit model remains E1**: Euclidean geometry + discrete measureme
 
 This is the **closest model** to “same as our universe” while preserving your
 integer-locked closure logic and allowing arbitrarily accurate approximations.
+
+---
+
+## Convergence Strategy (How to Get Arbitrarily Close)
+
+To make the model practically converge to the Euclidean constant, adopt a **double
+limit** strategy:
+
+1. **Resolution refinement:** choose grid spacing \(h = 1/m\) with \(m \to \infty\).
+2. **Large-radius sampling:** choose \(r = k h\) with \(k \to \infty\) so the circle
+   spans many grid cells.
+
+**Practical rule:** keep the ratio \(r/h = k\) large. The error scales like
+\(O(h/r) = O(1/k)\). Thus doubling \(k\) halves the error.
+
+This gives a concrete procedure for generating rational π estimates that converge
+monotonically to the Euclidean constant.
+
+---
+
+## Discrete Measurement Algorithm (Pseudo-Procedure)
+
+Given integer parameters \(m\) and \(k\):
+
+1. Set \(h = 1/m\), \(r = k h\).
+2. Enumerate integer grid points \((i,j)\) with \(|i|,|j| \le k\).
+3. Mark a point as in the ring if
+   \[
+   r-\tfrac{h}{2} \le h\sqrt{i^2+j^2} \le r+\tfrac{h}{2}.
+   \]
+4. Build the pixelated boundary and count its edge length \(E_h\).
+5. Compute \(\pi_{E1}(h) = (E_h h)/(2r)\).
+
+All steps are integer-based; thus the output is rational.
+
+---
+
+## Final Choice (No Further Assumptions Needed)
+
+Under the fixed premise “same as our universe” (Euclidean geometry), the **best-fit**
+model is:
+
+- **E1: Euclidean geometry + discrete measurement resolution.**
+
+This model is the **closest possible** to our universe while still allowing
+integer-locked closure conditions and rational intermediate approximations of π.
+It converges to the observed irrational constant in the refinement limit.
